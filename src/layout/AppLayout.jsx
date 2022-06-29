@@ -12,7 +12,7 @@ const AppLayout = () => {
 		<>
 			<div className="w-full h-screen bg-portfolio-dk">
 				<div
-					className="w-12 h-12 bg-portfolio-wt shadow-md hover:shadow-lg shadow-black hover:shadow-portfolio-wt fixed rounded-br-full 
+					className="w-10 h-10 lg:w-12 lg:h-12 bg-portfolio-wt shadow-md hover:shadow-lg shadow-black hover:shadow-portfolio-wt fixed rounded-br-full 
 					ease-out duration-300 transition-all cursor-pointer"
 				>
 					<a
@@ -25,7 +25,7 @@ const AppLayout = () => {
 							height="30"
 							fill="none"
 							viewBox="0 0 31 30"
-							className="hover:scale-105 left-1 top-1 absolute ease-out duration-300 transition-all"
+							className="hover:scale-105 left-[1px] top-[1px] lg:left-1 lg:top-1 absolute ease-out duration-300 transition-all"
 						>
 							<path
 								fill="#212125"
@@ -36,7 +36,7 @@ const AppLayout = () => {
 						</svg>
 					</a>
 				</div>
-				<div className="container max-w-5xl h-full mx-auto">
+				<div className="lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl h-full mx-auto">
 					<Outlet />
 				</div>
 			</div>

@@ -3,6 +3,7 @@ import { createContext, useState, useEffect } from "react";
 const SelectedContext = createContext();
 
 export const SelectedContent = ({ children }) => {
+	const contents = ["Projects", "whoami", "Contact"];
 	const [selectedContent, setSelectedContent] = useState("whoami");
 
 	useEffect(() => {
@@ -12,6 +13,7 @@ export const SelectedContent = ({ children }) => {
 	return (
 		<SelectedContext.Provider
 			value={{
+				contents,
 				selectedContent,
 				setSelectedContent,
 			}}

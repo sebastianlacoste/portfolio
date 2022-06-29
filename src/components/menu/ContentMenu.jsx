@@ -1,9 +1,10 @@
 import useSelectedContent from "../../hooks/useSelectedContent";
 
 const ContentMenu = () => {
-	const { selectedContent, setSelectedContent } = useSelectedContent();
+	const { contents, selectedContent, setSelectedContent } =
+		useSelectedContent();
 
-	const options = ["Projects", "whoami", "Contact"].map((option) => {
+	const options = contents.map((option) => {
 		return (
 			<button
 				className={`pb-1 ease-out duration-75 transition-all ${
@@ -12,6 +13,7 @@ const ContentMenu = () => {
 						: "opacity-50 hover:opacity-100"
 				}`}
 				onClick={() => setSelectedContent(option)}
+				key={option}
 			>
 				{option}
 			</button>
