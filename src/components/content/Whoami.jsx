@@ -1,6 +1,6 @@
 const Whoami = () => {
 	return (
-		<div className="w-full h-full p-2 sm:p-0 flex flex-col justify-center items-center">
+		<div className="w-full h-full p-2 sm:p-0 flex flex-col justify-center items-center whoamiAnimation">
 			<h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight tracking-wider text-portfolio-wt">
 				Hi, I'm Sebastian
 			</h1>

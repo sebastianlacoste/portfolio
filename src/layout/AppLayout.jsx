@@ -13,7 +13,7 @@ const AppLayout = () => {
 			<div className="w-full h-screen bg-portfolio-dk">
 				<div
 					className="w-10 h-10 lg:w-12 lg:h-12 bg-portfolio-wt shadow-md hover:shadow-lg shadow-black hover:shadow-portfolio-wt fixed rounded-br-full 
-					ease-out duration-300 transition-all cursor-pointer"
+					ease-out duration-300 transition-all cursor-pointer githubIconAnimation"
 				>
 					<a
 						href="https://github.com/sebastianlacoste/portfolio"

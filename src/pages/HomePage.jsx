@@ -10,7 +10,7 @@ const HomePage = () => {
 			>
 				<ViewContent />
 			</div>
-			<div className="w-full h-28 my-4 lg:my-8 border-t-[1px] border-t-portfolio-wt border-opacity-50 rounded-sm">
+			<div className="w-full h-28 my-4 lg:my-8 border-t-[1px] border-t-portfolio-wt border-opacity-50 rounded-sm contentMenuAnimation">
 				<ContentMenu />
 			</div>
 		</div>

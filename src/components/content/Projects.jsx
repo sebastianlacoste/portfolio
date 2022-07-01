@@ -382,7 +382,7 @@ const Projects = () => {
 
 	const techStackBoxs = Object.values(tracrypt.techStack).map((stack) => (
 		<div
-			className="p-3 shadow-inner shadow-black hover:shadow-lg hover:shadow-black hover:scale-105 flex justify-center items-center ease-out duration-300 transition-all cursor-pointer"
+			className="p-3 shadow-inner shadow-black hover:shadow-lg hover:shadow-black hover:scale-105 flex justify-center items-center ease-out duration-300 transition-all cursor-pointer projectsStackAnimation"
 			key={stack.props.title}
 		>
 			<div>{stack}</div>
@@ -391,7 +391,7 @@ const Projects = () => {
 
 	return (
 		<div className="w-full h-full p-2 sm:p-0 flex flex-col justify-center items-center overflow-hidden">
-			<div className="w-full sm:w-auto mx-2 xl:mx-16 2xl:mx-20 flex flex-col lg:flex-row justify-center items-center gap-1 sm:gap-5">
+			<div className="w-full sm:w-auto mx-2 xl:mx-16 2xl:mx-20 flex flex-col lg:flex-row justify-center items-center gap-1 sm:gap-5 projectsTitleAnimation">
 				<div className="scale-[60%] sm:scale-100">{tracrypt.logo}</div>
 
 				<h1 className="lg:h-[85%] pt-2 lg:pt-0 lg:pl-5 text-xs sm:text-base text-portfolio-wt text-center lg:text-left font-extralight tracking-wide lg:border-l-[1px] border-t-portfolio-wt lg:border-l-portfolio-wt border-opacity-50 flex items-center ">

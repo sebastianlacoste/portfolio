@@ -141,7 +141,7 @@ const Contact = () => {
 
 	return (
 		<form
-			className="w-full h-full py-2 lg:py-16 px-10 md:px-16 lg:px-32 xl:px-48 text-lg text-portfolio-wt font-extralight tracking-widest flex flex-wrap flex-col sm:flex-row justify-between items-center"
+			className="w-full h-full py-2 lg:py-16 px-10 md:px-16 lg:px-32 xl:px-48 text-lg text-portfolio-wt font-extralight tracking-widest flex flex-wrap flex-col sm:flex-row justify-between items-center contactAnimation"
 			ref={form}
 			onSubmit={preSendEmail}
 		>
