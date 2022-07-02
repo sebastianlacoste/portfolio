@@ -9,15 +9,18 @@ const Contact = () => {
 	const [email, setEmail] = useState("");
 	const [number, setNumber] = useState("");
 	const [msg, setMsg] = useState("");
-
 	const contactData = [name, lastName, email, number, msg];
 
-	const [sentEmail, setSentEmail] = useState(false);
-	const [sentEmailError, setSentEmailError] = useState(false);
+	const [sentForm, setSentForm] = useState(false);
+	const [sentFormError, setSentFormError] = useState(false);
 	const [showRecaptcha, setShowRecaptcha] = useState(false);
+
+	const emailRegExp =
+		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 	const form = useRef();
 
-	const sendIcons = {
+	const sentIcons = {
 		sent: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -58,26 +61,11 @@ const Contact = () => {
 		),
 	};
 
-	const createInput = (text, type, value, setValue, name) => (
+	const sentFormAnimation = (icon, color) => (
 		<div
-			className={`w-full sm:w-[40%] relative inputBox ${
-				sentEmail || sentEmailError ? "opacity-0" : "opacity-100"
-			}`}
+			className={`w-16 h-16 bg-green-400 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute rounded-xl sentFormAnimation ${color}`}
 		>
-			<input
-				type={type}
-				value={value}
-				name={name}
-				placeholder=" "
-				className={`w-full pl-1 py-1 bg-transparent text-portfolio-wt border-b-[1px] border-portfolio-wt outline-none ${
-					value !== "" ? "invalid:border-red-400 valid:border-green-400" : ""
-				}`}
-				required
-				onChange={(e) => setValue(e.target.value)}
-			/>
-			<span className="text-base text-portfolio-wt text-opacity-50 tracking-wider absolute left-1 translate-y-1 ease-out duration-300 transition-all pointer-events-none">
-				{text}
-			</span>
+			{sentIcons[icon]}
 		</div>
 	);
 
@@ -89,35 +77,91 @@ const Contact = () => {
 		setMsg("");
 
 		setTimeout(() => {
-			setSentEmail(false);
-			setSentEmailError(false);
+			setSentForm(false);
+			setSentFormError(false);
 			setShowRecaptcha(false);
 		}, 5000);
 	};
 
-	const sentEmailAnim = (icon, color) => (
+	const createFormInput = (
+		dataType,
+		inputName,
+		inputValue,
+		setValue,
+		inputContent
+	) => (
 		<div
-			className={`w-16 h-16 bg-green-400 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute rounded-xl sentEmailAnimation ${color}`}
+			className={`w-full sm:w-[40%] relative inputBox ${
+				sentForm || sentFormError ? "opacity-0" : "opacity-100"
+			}`}
 		>
-			{sendIcons[icon]}
+			<input
+				type={dataType}
+				name={inputName}
+				value={inputValue}
+				placeholder=" "
+				className={`w-full pl-1 py-1 bg-transparent text-portfolio-wt border-b-[1px] border-portfolio-wt outline-none ${
+					inputValue !== "" && dataType !== "email"
+						? inputValue.match(/^ *$/) !== null
+							? "border-red-400"
+							: "border-green-400"
+						: null
+				} ${
+					inputValue !== "" && dataType === "email"
+						? !String(inputValue).toLowerCase().match(emailRegExp)
+							? "border-red-400"
+							: "border-green-400"
+						: null
+				}`}
+				required
+				onChange={(e) => setValue(e.target.value)}
+			/>
+			<span className="text-base text-portfolio-wt text-opacity-50 tracking-wider absolute left-1 translate-y-1 ease-out duration-300 transition-all pointer-events-none">
+				{inputContent}
+			</span>
 		</div>
 	);
 
-	const preSendEmail = (e) => {
+	// Form submission process
+
+	const checkInputValues = () => {
+		let invalidValues = [];
+
+		// Null and Blank Spaces
+		for (let i = 0; i < contactData.length; i++) {
+			if (contactData[i] === null || contactData[i].match(/^ *$/) !== null) {
+				invalidValues[i] = true;
+			}
+		}
+
+		// Email address validation
+		if (!String(contactData[2]).toLowerCase().match(emailRegExp)) {
+			invalidValues.push(true);
+		}
+
+		// Disabled or not, the submit button
+		if (invalidValues.length > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
+	const checkRobots = (e) => {
 		e.preventDefault();
 		setShowRecaptcha(true);
 	};
 
 	const verifyRecaptcha = (value) => {
 		if (value !== "") {
-			sendEmail();
+			submitForm();
 		} else {
-			setSentEmailError(true);
+			setSentFormError(true);
 			resetForm();
 		}
 	};
 
-	const sendEmail = () => {
+	const submitForm = () => {
 		emailjs
 			.sendForm(
 				import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -127,12 +171,10 @@ const Contact = () => {
 			)
 			.then(
 				(result) => {
-					console.log(result.text);
-					setSentEmail(true);
+					setSentForm(true);
 				},
 				(error) => {
-					console.log(error.text);
-					setSentEmailError(true);
+					setSentFormError(true);
 				}
 			);
 
@@ -143,18 +185,19 @@ const Contact = () => {
 		<form
 			className="w-full h-full py-2 lg:py-16 px-10 md:px-16 lg:px-32 xl:px-48 text-lg text-portfolio-wt font-extralight tracking-widest flex flex-wrap flex-col sm:flex-row justify-between items-center contactAnimation"
 			ref={form}
-			onSubmit={preSendEmail}
+			onSubmit={checkRobots}
 		>
-			{/* Inputs: Name, Lastname, Email, Number */}
-			{createInput("Name", "text", name, setName, "name")}
-			{createInput("Lastname", "text", lastName, setLastName, "lastname")}
-			{createInput("Email", "email", email, setEmail, "email")}
-			{createInput("Number/t.me", "text", number, setNumber, "number")}
+			{/* Inputs: Name, Lastname, Email, Number/t.me */}
+			{/* createFormInput(dataType, inputName, inputValue, setValue, inputContent) */}
+			{createFormInput("text", "name", name, setName, "Name")}
+			{createFormInput("text", "lastname", lastName, setLastName, "Lastname")}
+			{createFormInput("email", "email", email, setEmail, "Email")}
+			{createFormInput("text", "number", number, setNumber, "Number/t.me")}
 
-			{/* Textarea: Message | Submit */}
+			{/* Textarea: Message | Input: Submit */}
 			<div
 				className={`w-full relative inputBox ${
-					sentEmail || sentEmailError ? "opacity-0" : "opacity-100"
+					sentForm || sentFormError ? "opacity-0" : "opacity-100"
 				}`}
 			>
 				<textarea
@@ -163,7 +206,11 @@ const Contact = () => {
 					placeholder=" "
 					name="message"
 					className={`w-full h-full sm:h-32 pl-1 py-1 bg-transparent text-portfolio-wt border-b-[1px] border-portfolio-wt resize-none outline-none ${
-						msg !== "" ? "invalid:border-red-400 valid:border-green-400" : ""
+						msg !== ""
+							? msg === null || msg.match(/^ *$/) !== null
+								? "border-red-400"
+								: "border-green-400"
+							: ""
 					} ${!contactData.includes("") ? "h-16" : null}`}
 					required
 					onChange={(e) => setMsg(e.target.value)}
@@ -171,15 +218,14 @@ const Contact = () => {
 				<span className="text-base text-portfolio-wt text-opacity-50 tracking-wider absolute left-1 translate-y-1 ease-out duration-300 transition-all pointer-events-none">
 					Message
 				</span>
+
 				{/* Submit */}
 				<div className="w-full -translate-y-[6px] flex justify-end absoulte">
 					<input
 						type="submit"
-						className="w-20 lg:w-24 py-1 bg-green-400 disabled:opacity-0 hover:shadow-md hover:shadow-portfolio-wt text-portfolio-wt font-bold tracking-widest border-[1px] border-t-0 border-green-400 rounded-b-md ease-out duration-300 transition-all cursor-pointer"
+						className="w-20 lg:w-24 py-1 bg-green-400 disabled:opacity-0 hover:shadow-md hover:shadow-portfolio-wt text-portfolio-wt font-bold tracking-widest border-[1px] border-t-0 border-green-400 rounded-b-md ease-out duration-300 transition-all cursor-pointer disabled:cursor-default"
 						value="Send"
-						{...(contactData.includes("") && {
-							disabled: true,
-						})}
+						disabled={checkInputValues()}
 					/>
 				</div>
 			</div>
@@ -188,7 +234,7 @@ const Contact = () => {
 			{showRecaptcha ? (
 				<div
 					className={`w-full h-screen bg-black bg-opacity-75 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-10 ${
-						sentEmail || sentEmailError ? "opacity-0" : "opacity-100"
+						sentForm || sentFormError ? "opacity-0" : "opacity-100"
 					}`}
 				>
 					<ReCAPTCHA
@@ -199,11 +245,11 @@ const Contact = () => {
 				</div>
 			) : null}
 
-			{/* Email Sent/notSent Animation */}
-			{sentEmail
-				? sentEmailAnim("sent", "bg-green-400")
-				: sentEmailError
-				? sentEmailAnim("notSent", "bg-red-400")
+			{/* Form sent/notSent Animation */}
+			{sentForm
+				? sentFormAnimation("sent", "bg-green-400")
+				: sentFormError
+				? sentFormAnimation("notSent", "bg-red-400")
 				: null}
 		</form>
 	);

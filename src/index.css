@@ -18,42 +18,9 @@
 		border-radius: 50px;
 	}
 
-	/* Input-Span down/up Effect */
-	.inputBox input:not(:placeholder-shown) ~ span,
-	.inputBox textarea:not(:placeholder-shown) ~ span,
-	.inputBox input:focus ~ span,
-	.inputBox textarea:focus ~ span {
-		transform: translateY(-20px);
-		font-size: 14px;
-		color: #f6f6f6;
-	}
+	/* Animations */
 
-	/* Email sent/notSent Animation */
-	.sentEmailAnimation {
-		animation: onSentEmail 1s ease-in forwards running;
-	}
-
-	@keyframes onSentEmail {
-		0% {
-			opacity: 0;
-			box-shadow: 0px 0px 0px #f6f6f6;
-			transform: translate(-50%, -50%) scale(0);
-		}
-
-		50% {
-			opacity: 0.5;
-			box-shadow: 0px 0px 40px #f6f6f6;
-			transform: translate(-50%, -50%) scale(2);
-		}
-
-		100% {
-			opacity: 1;
-			box-shadow: 0px 0px 20px #f6f6f6;
-			transform: translate(-50%, -50%) scale(1);
-		}
-	}
-
-	/* GitHub Icon Animation */
+	/* GitHub Icon */
 	.githubIconAnimation {
 		animation: onShowGitHub 1s ease-out running;
 	}
@@ -68,7 +35,7 @@
 		}
 	}
 
-	/* ContentMenu Animation */
+	/* Menu */
 	.contentMenuAnimation {
 		animation: onShowMenu 1s ease-out running;
 	}
@@ -83,7 +50,7 @@
 		}
 	}
 
-	/* Whoami Animation */
+	/* Whoami */
 	.whoamiAnimation {
 		animation: onShowWhoami 1s ease-in-out running;
 	}
@@ -98,7 +65,7 @@
 		}
 	}
 
-	/* Projects Animation */
+	/* Projects */
 
 	/* Tech Stack */
 	.projectsStackAnimation {
@@ -136,7 +103,7 @@
 		}
 
 		90% {
-			transform: scale(0.90);
+			transform: scale(0.9);
 		}
 
 		95% {
@@ -148,6 +115,43 @@
 		}
 	}
 
+	/* Contact */
+
+	/* Input-Span down/up Effect */
+	.inputBox input:not(:placeholder-shown) ~ span,
+	.inputBox textarea:not(:placeholder-shown) ~ span,
+	.inputBox input:focus ~ span,
+	.inputBox textarea:focus ~ span {
+		transform: translateY(-20px);
+		font-size: 14px;
+		color: #f6f6f6;
+	}
+
+	/* Email sent/notSent Animation */
+	.sentFormAnimation {
+		animation: onSentForm 1s ease-in forwards running;
+	}
+
+	@keyframes onSentForm {
+		0% {
+			opacity: 0;
+			box-shadow: 0px 0px 0px #f6f6f6;
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		50% {
+			opacity: 0.5;
+			box-shadow: 0px 0px 40px #f6f6f6;
+			transform: translate(-50%, -50%) scale(2);
+		}
+
+		100% {
+			opacity: 1;
+			box-shadow: 0px 0px 20px #f6f6f6;
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
 	/* Contact Animation */
 	.contactAnimation {
 		animation: onShowContact 1s ease-in-out running;
@@ -156,7 +160,7 @@
 	@keyframes onShowContact {
 		0% {
 			opacity: 0;
-			transform: scale(0.90);
+			transform: scale(0.9);
 		}
 
 		100% {
@@ -164,4 +168,5 @@
 			transform: scale(1);
 		}
 	}
+
 }

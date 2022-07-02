@@ -41,7 +41,7 @@ const Projects = () => {
 			</a>
 		),
 		description: (
-			<h2>
+			<span>
 				{" "}
 				Tracrypt is a web-based tool where you can track and filter market data
 				from the top 250 cryptocurrencies, all data is obtained via the
@@ -53,7 +53,7 @@ const Projects = () => {
 				>
 					GitHub
 				</a>
-			</h2>
+			</span>
 		),
 		techStack: {
 			vite: (
