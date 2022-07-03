@@ -51,17 +51,37 @@
 	}
 
 	/* Whoami */
-	.whoamiAnimation {
+	.whoamiAnimation h1 {
 		animation: onShowWhoami 1s ease-in-out running;
 	}
 
 	@keyframes onShowWhoami {
 		0% {
 			opacity: 0;
+			transform: translateY(5%);
 		}
 
 		100% {
 			opacity: 1;
+			transform: translateY(0%);
+		}
+	}
+
+	.whoamiAnimation h2 {
+		animation: onShowWhoamiSub 1.5s ease-in-out running;
+	}
+
+	.whoamiAnimation h3 {
+		animation: onShowWhoamiSub 2s ease-in-out running;
+	}
+
+	@keyframes onShowWhoamiSub {
+		0% {
+			transform: translateY(15%);
+		}
+
+		100% {
+			transform: translateY(0%);
 		}
 	}
 
@@ -168,5 +188,4 @@
 			transform: scale(1);
 		}
 	}
-
 }

@@ -41,7 +41,7 @@ const Projects = () => {
 			</a>
 		),
 		description: (
-			<span>
+			<span className="cursor-default">
 				{" "}
 				Tracrypt is a web-based tool where you can track and filter market data
 				from the top 250 cryptocurrencies, all data is obtained via the
