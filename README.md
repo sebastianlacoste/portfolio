@@ -1,21 +1,27 @@
 <p align="center">
-  <a href="" target="_blank" rel="noopener noreferrer">
-    <img width="" src="./doc/Readme/Logo.png" alt="Tracrypt logo">
+  <a href="https://sebastianlacoste.com" target="_blank" rel="noopener noreferrer">
+    <img width="" src="./doc/Readme/Logo.png" alt="Portfolio Logo">
   </a>
 </p>
 <hr/>
 
-> [Sebastian Lacoste]() is my personal portfolio.
+> [Sebastian Lacoste](https://sebastianlacoste.com) is my Portfolio, where you can see my Projects, CV and Contact me.
 
 ## Features
 
+- **Projects Showcase**
+
+  - [Tracrypt](https://github.com/sebastianlacoste/tracrypt)
+
+- **Contact Form**
+
 - **PWA Support**
 
-- **Mobile-Ready**
+- **Mobile-Friendly**
 
 ## Tech Stack
 
-- **Frontend**
+- **Front-end**
 
   - **Build**
 
@@ -25,7 +31,7 @@
 
     - [React](https://github.com/facebook/react)
 
-    - [React Router DOM](https://github.com/remix-run/react-router)
+    - [React Router](https://github.com/remix-run/react-router)
 
   - **CSS**
 
@@ -34,6 +40,14 @@
     - [Postcss](https://github.com/postcss/postcss)
 
     - [Autoprefixer](https://github.com/postcss/autoprefixer)
+
+  - **Email**
+
+    - [EmailJS](https://github.com/emailjs-com/emailjs-sdk)
+
+  - **reCAPTCHA**
+
+    - [React Google reCAPTCHA](https://github.com/dozoisch/react-google-recaptcha)
 
 ## Run Locally
 
@@ -72,7 +86,7 @@ Start the server
 In the browser, go to
 
 ```
-  http://localhost:3000/
+  http://localhost:3000
 ```
 
 **All in One**
@@ -93,9 +107,19 @@ In the browser, go to
 
 - **Desktop**
 
-- **Tablet**
+  ![Desktop](./doc/Readme/Desktop.png) 
+
+  ![Desktop-Projects](./doc/Readme/Desktop-Projects.png) 
+  
+  ![Desktop-Contact](./doc/Readme/Desktop-Contact.png) 
 
 - **Mobile**
+
+  ![Mobile](./doc/Readme/Mobile.png)
+
+  ![Mobile-Projects](./doc/Readme/Mobile-Projects.png)
+
+  ![Mobile-Contact](./doc/Readme/Mobile-Contact.png)
 
 ## License
 

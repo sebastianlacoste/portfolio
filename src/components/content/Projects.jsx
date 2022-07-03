@@ -2,7 +2,8 @@ const Projects = () => {
 	const tracrypt = {
 		logo: (
 			<a
-				href="https://github.com/sebastianlacoste/tracrypt"
+				href="https://tracrypt.sebastianlacoste.com"
+				target="_blank"
 				rel="noopener noreferrer"
 			>
 				<svg
@@ -318,7 +319,7 @@ const Projects = () => {
 				<a
 					href="https://www.coingecko.com/en/api"
 					rel="noopener noreferrer"
-					title="Coingecko API"
+					title="CoinGecko API"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
