@@ -233,10 +233,23 @@ const Contact = () => {
 			{/* reCAPTCHA */}
 			{showRecaptcha ? (
 				<div
-					className={`w-full h-screen bg-black bg-opacity-75 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-10 ${
+					className={`w-full h-screen bg-black bg-opacity-75 flex flex-col justify-center items-center gap-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-10 ${
 						sentForm || sentFormError ? "opacity-0" : "opacity-100"
 					}`}
 				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="80"
+						height="72"
+						fill="none"
+						viewBox="0 0 80 72"
+						className="animate-bounce"
+					>
+						<path
+							fill="#d5d5d5"
+							d="M69.09 7.2h-7.272V3.6h9.091c1.018 0 1.818.792 1.818 1.8v7.2c0 1.008-.8 1.8-1.818 1.8h-1.818V18h-3.636v-7.2h3.636V7.2zm-3.636 18h3.637v-3.6h-3.636v3.6zM58.182 3.6h-3.637V18h3.637V3.6zM80 46.8v10.8c0 1.98-1.636 3.6-3.636 3.6h-3.637v3.6c0 3.996-3.236 7.2-7.273 7.2H14.546a7.31 7.31 0 01-5.143-2.109 7.164 7.164 0 01-2.13-5.091v-3.6H3.636c-2 0-3.636-1.62-3.636-3.6V46.8c0-1.98 1.636-3.6 3.636-3.6h3.637c0-13.932 11.381-25.2 25.454-25.2h3.637v-4.572A7.13 7.13 0 0132.727 7.2C32.727 3.24 36 0 40 0c4 0 7.273 3.24 7.273 7.2a7.13 7.13 0 01-3.637 6.228V18h3.637c1.236 0 2.436.108 3.636.288V28.8h17.236a24.812 24.812 0 014.582 14.4h3.637c2 0 3.636 1.62 3.636 3.6zm-47.273 1.8a8.955 8.955 0 00-2.662-6.364 9.138 9.138 0 00-6.429-2.636 9.138 9.138 0 00-6.428 2.636 8.955 8.955 0 00-2.662 6.364c0 2.387.957 4.676 2.662 6.364a9.138 9.138 0 006.428 2.636 9.138 9.138 0 006.429-2.636 8.955 8.955 0 002.662-6.364zm32.727 0a8.955 8.955 0 00-2.662-6.364 9.138 9.138 0 00-6.428-2.636 9.138 9.138 0 00-6.429 2.636 8.955 8.955 0 00-2.662 6.364c0 2.387.957 4.676 2.662 6.364a9.138 9.138 0 006.429 2.636 9.138 9.138 0 006.428-2.636 8.955 8.955 0 002.662-6.364zm-7.272-27h-3.637v3.6h3.637v-3.6z"
+						></path>
+					</svg>
 					<ReCAPTCHA
 						sitekey={import.meta.env.VITE_GOOGLE_RECAPTCHA_SITE_KEY}
 						onChange={verifyRecaptcha}

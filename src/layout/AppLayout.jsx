@@ -17,6 +17,7 @@ const AppLayout = () => {
 				>
 					<a
 						href="https://github.com/sebastianlacoste/portfolio"
+						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<svg
