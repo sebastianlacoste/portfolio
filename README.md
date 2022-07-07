@@ -51,7 +51,7 @@
 
 ## Run Locally
 
-Clone the project
+Clone the repository
 
 - HTTPS
 
@@ -65,10 +65,10 @@ Clone the project
   git clone git@github.com:sebastianlacoste/portfolio.git
   ```
 
-Go to the project directory
+Go to the repository directory
 
 ```bash
-  cd portfolio
+  cd portfolio/
 ```
 
 Install dev/Dependencies
@@ -89,18 +89,18 @@ In the browser, go to
   http://localhost:3000
 ```
 
-**All in One**
+**All-In-One**
 
 - HTTPS
 
   ```bash
-  git clone https://github.com/sebastianlacoste/portfolio.git; cd portfolio; npm i; npm run dev;
+  git clone https://github.com/sebastianlacoste/portfolio.git; cd portfolio/; npm i; npm run dev;
   ```
 
 - SSH
 
   ```bash
-  git clone git@github.com:sebastianlacoste/portfolio.git; cd portfolio; npm i; npm run dev;
+  git clone git@github.com:sebastianlacoste/portfolio.git; cd portfolio/; npm i; npm run dev;
   ```
 
 ## Screenshots
