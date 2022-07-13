@@ -1,7 +1,7 @@
-const app = () => {
+const RegisterSW = () => {
 	if ("serviceWorker" in navigator) {
 		navigator.serviceWorker.register("../../sw.js");
 	}
 };
 
-export default app;
+export default RegisterSW;

@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+import { SelectedContent } from "./context/SelectedContent";
+
 import AppLayout from "./layout/AppLayout";
 import HomePage from "./pages/HomePage";
-
-import { SelectedContent } from "./context/SelectedContent";
 
 function App() {
 	return (

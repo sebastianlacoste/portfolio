@@ -185,7 +185,7 @@ const Projects = () => {
 				<a
 					href="https://github.com/tailwindlabs/tailwindcss"
 					rel="noopener noreferrer"
-					title="Tailwindcss"
+					title="Tailwind CSS"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +227,7 @@ const Projects = () => {
 				<a
 					href="https://github.com/postcss/postcss"
 					rel="noopener noreferrer"
-					title="Postcss"
+					title="PostCSS"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

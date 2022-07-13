@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
-import pwa from "../pwa/app";
+import RegisterSW from "../pwa/RegisterSW";
 
 const AppLayout = () => {
 	useEffect(() => {
-		pwa();
+		RegisterSW();
 	}, []);
 
 	return (
