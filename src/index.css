@@ -103,6 +103,31 @@
 
 	/* Projects */
 
+	/* Logo and Description */
+	.projectsTitleAnimation {
+		animation: onShowProjectsTitle 1s ease-out running;
+	}
+
+	@keyframes onShowProjectsTitle {
+		0% {
+			opacity: 0;
+			transform: scale(1);
+		}
+
+		90% {
+			transform: scale(0.9);
+		}
+
+		95% {
+			transform: scale(0.95);
+		}
+
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
 	/* Tech Stack */
 	.projectsStackAnimation {
 		animation: onShowProjectsStack 1s ease-in-out running;
@@ -128,26 +153,19 @@
 		}
 	}
 
-	/* Logo and Description */
-	.projectsTitleAnimation {
-		animation: onShowProjectsTitle 1s ease-out running;
+	/* Projects Index */
+
+	.projectsIndexAnimation {
+		animation: onShowProjectsIndex 3s ease-in-out running;
 	}
 
-	@keyframes onShowProjectsTitle {
+	@keyframes onShowProjectsIndex {
 		0% {
-			transform: scale(1);
-		}
-
-		90% {
-			transform: scale(0.9);
-		}
-
-		95% {
-			transform: scale(0.95);
+			opacity: 0;
 		}
 
 		100% {
-			transform: scale(1);
+			opacity: 0.5;
 		}
 	}
 
