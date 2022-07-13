@@ -50,7 +50,7 @@ const Projects = () => {
 				<a
 					href="https://github.com/sebastianlacoste/tracrypt"
 					rel="noopener noreferrer"
-					className="text-portfolio-wt font-semibold"
+					className="font-semibold text-portfolio-wt"
 				>
 					GitHub
 				</a>
@@ -383,7 +383,7 @@ const Projects = () => {
 
 	const techStackBoxs = Object.values(tracrypt.techStack).map((stack) => (
 		<div
-			className="p-3 shadow-inner shadow-black hover:shadow-lg hover:shadow-black hover:scale-105 flex justify-center items-center ease-out duration-300 transition-all cursor-pointer projectsStackAnimation"
+			className="projectsStackAnimation flex cursor-pointer items-center justify-center p-3 shadow-inner shadow-black transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-black"
 			key={stack.props.title}
 		>
 			<div>{stack}</div>
@@ -391,16 +391,16 @@ const Projects = () => {
 	));
 
 	return (
-		<div className="w-full h-full p-2 sm:p-0 flex flex-col justify-center items-center overflow-hidden">
-			<div className="w-full sm:w-auto mx-2 xl:mx-16 2xl:mx-20 flex flex-col lg:flex-row justify-center items-center gap-1 sm:gap-5 projectsTitleAnimation">
+		<div className="flex h-full w-full flex-col items-center justify-center overflow-hidden p-2 sm:p-0">
+			<div className="projectsTitleAnimation mx-2 flex w-full flex-col items-center justify-center gap-1 sm:w-auto sm:gap-5 lg:flex-row xl:mx-16 2xl:mx-20">
 				<div className="scale-[60%] sm:scale-100">{tracrypt.logo}</div>
 
-				<h1 className="lg:h-[85%] pt-2 lg:pt-0 lg:pl-5 text-xs sm:text-base text-portfolio-wt text-center lg:text-left font-extralight tracking-wide lg:border-l-[1px] border-t-portfolio-wt lg:border-l-portfolio-wt border-opacity-50 flex items-center ">
+				<h1 className="flex items-center border-t-portfolio-wt border-opacity-50 pt-2 text-center text-xs font-extralight tracking-wide text-portfolio-wt sm:text-base lg:h-[85%] lg:border-l-[1px] lg:border-l-portfolio-wt lg:pt-0 lg:pl-5 lg:text-left ">
 					{tracrypt.description}
 				</h1>
 			</div>
 
-			<div className="mt-2 sm:mt-14 flex flex-wrap justify-center items-center gap-5 lg:gap-10 scale-[80%] sm:scale-100">
+			<div className="mt-2 flex scale-[80%] flex-wrap items-center justify-center gap-5 sm:mt-14 sm:scale-100 lg:gap-10">
 				{techStackBoxs}
 			</div>
 		</div>

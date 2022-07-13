@@ -7,7 +7,7 @@ const ContentMenu = () => {
 	const options = contents.map((option) => {
 		return (
 			<button
-				className={`pb-1 ease-out duration-75 transition-all ${
+				className={`pb-1 transition-all duration-75 ease-out ${
 					selectedContent === option
 						? "border-b-[1px] border-b-portfolio-wt"
 						: "opacity-50 hover:opacity-100"
@@ -21,7 +21,7 @@ const ContentMenu = () => {
 	});
 
 	return (
-		<div className="w-full h-full text-xl font-extralight text-portfolio-wt flex justify-evenly items-center">
+		<div className="flex h-full w-full items-center justify-evenly text-xl font-extralight text-portfolio-wt">
 			{options}
 		</div>
 	);

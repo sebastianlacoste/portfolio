@@ -2,7 +2,7 @@
 	"name": "Sebastian Lacoste",
 	"short_name": "Sebastian Lacoste",
 	"description": "My Portfolio, where you can see my Projects and Contact me.",
-	"version": "1.0",
+	"version": "1.0.0",
 	"start_url": ".",
 	"display": "standalone",
 	"orientation": "portrait-primary",

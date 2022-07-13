@@ -1,18 +1,18 @@
 const Whoami = () => {
 	return (
-		<div className="w-full h-full p-2 sm:p-0 flex flex-col justify-center items-center whoamiAnimation">
-			<h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight tracking-wider text-portfolio-wt cursor-default">
+		<div className="whoamiAnimation flex h-full w-full flex-col items-center justify-center p-2 sm:p-0">
+			<h1 className="cursor-default text-center text-6xl font-extralight tracking-wider text-portfolio-wt sm:text-7xl md:text-8xl lg:text-9xl">
 				Hi, I'm Sebastian
 			</h1>
-			<h2 className="px-5 lg:px-0 mt-8 md:mt-10 opacity-75 hover:opacity-100 text-center text-xs sm:text-sm md:text-lg lg:text-xl font-extralight tracking-wider text-portfolio-wt ease-out duration-300 transition-all cursor-default">
+			<h2 className="mt-8 cursor-default px-5 text-center text-xs font-extralight tracking-wider text-portfolio-wt opacity-75 transition-all duration-300 ease-out hover:opacity-100 sm:text-sm md:mt-10 md:text-lg lg:px-0 lg:text-xl">
 				I'm a Front-end Developer focused on HTML, CSS, JavaScript, React,
 				Tailwindcss, and Responsive Design.
 			</h2>
-			<h3 className="px-6 sm:px-0 mt-4 opacity-50 hover:opacity-100 text-center text-[11px] sm:text-sm md:text-lg lg:text-xl font-extralight tracking-widest text-portfolio-wt ease-out duration-300 transition-all cursor-default">
+			<h3 className="mt-4 cursor-default px-6 text-center text-[11px] font-extralight tracking-widest text-portfolio-wt opacity-50 transition-all duration-300 ease-out hover:opacity-100 sm:px-0 sm:text-sm md:text-lg lg:text-xl">
 				I love to bring any idea to life through code.
 			</h3>
 			<a
-				className="w-24 h-8 md:w-28 md:h-10 mt-8 opacity-75 hover:opacity-100 shadow shadow-black hover:shadow-lg hover:shadow-black text-base md:text-lg text-portfolio-wt font-extralight tracking-widest flex justify-center items-center hover:scale-x-105 ease-in-out duration-300 transition-all"
+				className="mt-8 flex h-8 w-24 items-center justify-center text-base font-extralight tracking-widest text-portfolio-wt opacity-75 shadow shadow-black transition-all duration-300 ease-in-out hover:scale-x-105 hover:opacity-100 hover:shadow-lg hover:shadow-black md:h-10 md:w-28 md:text-lg"
 				href="./cv/Sebastian-Lacoste-CV.pdf"
 				target="_blank"
 			>

@@ -63,7 +63,7 @@ const Contact = () => {
 
 	const sentFormAnimation = (icon, color) => (
 		<div
-			className={`w-16 h-16 bg-green-400 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute rounded-xl sentFormAnimation ${color}`}
+			className={`sentFormAnimation absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl bg-green-400 ${color}`}
 		>
 			{sentIcons[icon]}
 		</div>
@@ -91,7 +91,7 @@ const Contact = () => {
 		inputContent
 	) => (
 		<div
-			className={`w-full sm:w-[40%] relative inputBox ${
+			className={`inputBox relative w-full sm:w-[40%] ${
 				sentForm || sentFormError ? "opacity-0" : "opacity-100"
 			}`}
 		>
@@ -100,7 +100,7 @@ const Contact = () => {
 				name={inputName}
 				value={inputValue}
 				placeholder=" "
-				className={`w-full pl-1 py-1 bg-transparent text-portfolio-wt border-b-[1px] border-portfolio-wt outline-none ${
+				className={`w-full border-b-[1px] border-portfolio-wt bg-transparent py-1 pl-1 text-portfolio-wt outline-none ${
 					inputValue !== "" && dataType !== "email"
 						? inputValue.match(/^ *$/) !== null
 							? "border-red-400"
@@ -116,7 +116,7 @@ const Contact = () => {
 				required
 				onChange={(e) => setValue(e.target.value)}
 			/>
-			<span className="text-base text-portfolio-wt text-opacity-50 tracking-wider absolute left-1 translate-y-1 ease-out duration-300 transition-all pointer-events-none">
+			<span className="pointer-events-none absolute left-1 translate-y-1 text-base tracking-wider text-portfolio-wt text-opacity-50 transition-all duration-300 ease-out">
 				{inputContent}
 			</span>
 		</div>
@@ -183,7 +183,7 @@ const Contact = () => {
 
 	return (
 		<form
-			className="w-full h-full py-2 lg:py-16 px-10 md:px-16 lg:px-32 xl:px-48 text-lg text-portfolio-wt font-extralight tracking-widest flex flex-wrap flex-col sm:flex-row justify-between items-center contactAnimation"
+			className="contactAnimation flex h-full w-full flex-col flex-wrap items-center justify-between py-2 px-10 text-lg font-extralight tracking-widest text-portfolio-wt sm:flex-row md:px-16 lg:py-16 lg:px-32 xl:px-48"
 			ref={form}
 			onSubmit={checkRobots}
 		>
@@ -196,7 +196,7 @@ const Contact = () => {
 
 			{/* Textarea: Message | Input: Submit */}
 			<div
-				className={`w-full relative inputBox ${
+				className={`inputBox relative w-full ${
 					sentForm || sentFormError ? "opacity-0" : "opacity-100"
 				}`}
 			>
@@ -205,7 +205,7 @@ const Contact = () => {
 					value={msg}
 					placeholder=" "
 					name="message"
-					className={`w-full h-full sm:h-32 pl-1 py-1 bg-transparent text-portfolio-wt border-b-[1px] border-portfolio-wt resize-none outline-none ${
+					className={`h-full w-full resize-none border-b-[1px] border-portfolio-wt bg-transparent py-1 pl-1 text-portfolio-wt outline-none sm:h-32 ${
 						msg !== ""
 							? msg === null || msg.match(/^ *$/) !== null
 								? "border-red-400"
@@ -215,15 +215,15 @@ const Contact = () => {
 					required
 					onChange={(e) => setMsg(e.target.value)}
 				></textarea>
-				<span className="text-base text-portfolio-wt text-opacity-50 tracking-wider absolute left-1 translate-y-1 ease-out duration-300 transition-all pointer-events-none">
+				<span className="pointer-events-none absolute left-1 translate-y-1 text-base tracking-wider text-portfolio-wt text-opacity-50 transition-all duration-300 ease-out">
 					Message
 				</span>
 
 				{/* Submit */}
-				<div className="w-full -translate-y-[6px] flex justify-end absoulte">
+				<div className="absoulte flex w-full -translate-y-[6px] justify-end">
 					<input
 						type="submit"
-						className="w-20 lg:w-24 py-1 bg-green-400 disabled:opacity-0 hover:shadow-md hover:shadow-portfolio-wt text-portfolio-wt font-bold tracking-widest border-[1px] border-t-0 border-green-400 rounded-b-md ease-out duration-300 transition-all cursor-pointer disabled:cursor-default"
+						className="w-20 cursor-pointer rounded-b-md border-[1px] border-t-0 border-green-400 bg-green-400 py-1 font-bold tracking-widest text-portfolio-wt transition-all duration-300 ease-out hover:shadow-md hover:shadow-portfolio-wt disabled:cursor-default disabled:opacity-0 lg:w-24"
 						value="Send"
 						disabled={checkInputValues()}
 					/>
@@ -233,7 +233,7 @@ const Contact = () => {
 			{/* reCAPTCHA */}
 			{showRecaptcha ? (
 				<div
-					className={`w-full h-screen bg-black bg-opacity-75 flex flex-col justify-center items-center gap-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-10 ${
+					className={`absolute top-1/2 left-1/2 z-10 flex h-screen w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-5 bg-black bg-opacity-75 ${
 						sentForm || sentFormError ? "opacity-0" : "opacity-100"
 					}`}
 				>

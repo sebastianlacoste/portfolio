@@ -10,10 +10,10 @@ const AppLayout = () => {
 
 	return (
 		<>
-			<div className="w-full h-screen bg-portfolio-dk">
+			<div className="h-screen w-full bg-portfolio-dk">
 				<div
-					className="w-10 h-10 lg:w-12 lg:h-12 bg-portfolio-wt shadow-md hover:shadow-lg shadow-black hover:shadow-portfolio-wt fixed rounded-br-full 
-					ease-out duration-300 transition-all cursor-pointer githubIconAnimation"
+					className="githubIconAnimation fixed h-10 w-10 cursor-pointer rounded-br-full bg-portfolio-wt shadow-md shadow-black transition-all duration-300 
+					ease-out hover:shadow-lg hover:shadow-portfolio-wt lg:h-12 lg:w-12"
 				>
 					<a
 						href="https://github.com/sebastianlacoste/portfolio"
@@ -26,7 +26,7 @@ const AppLayout = () => {
 							height="30"
 							fill="none"
 							viewBox="0 0 31 30"
-							className="hover:scale-105 left-[1px] top-[1px] lg:left-1 lg:top-1 absolute ease-out duration-300 transition-all"
+							className="absolute left-[1px] top-[1px] transition-all duration-300 ease-out hover:scale-105 lg:left-1 lg:top-1"
 						>
 							<path
 								fill="#212125"
@@ -37,7 +37,7 @@ const AppLayout = () => {
 						</svg>
 					</a>
 				</div>
-				<div className="lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl h-full mx-auto">
+				<div className="mx-auto h-full lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
 					<Outlet />
 				</div>
 			</div>
